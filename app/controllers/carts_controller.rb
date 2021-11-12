@@ -2,8 +2,7 @@ class CartsController < ApplicationController
 
 
   def show
-    render "empty_cart"
-    puts "hi"
+    
   end
 
 
