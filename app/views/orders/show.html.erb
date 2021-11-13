@@ -4,6 +4,19 @@
     <h1>Order #<%= @order.id %></h1>
   </header>
 
+  <div><%= @order.email %></div>
+  <div><%= humanized_money_with_symbol @order.total_cents / 100 %></div>
+  <div><%= @order.line_items %></div>
+
+
+  <tbody>
+  <% @order.line_items.each do |item| %>
+    <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
+  <% end %>
+  </tbody>
+
+
+
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>
