@@ -9,6 +9,7 @@
       </button>
       <a class="navbar-brand" href="/">Jungle</a>
     </div>
+    
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -49,6 +50,31 @@
            About Us
           <% end %>
         </li>
+
+        <% if !current_user %>
+        <li>
+        <%= link_to 'login' do %>
+         Login
+        <% end %>
+      </li>
+
+      <li>
+      <%= link_to 'signup' do %>
+       Sign up
+      <% end %>
+    </li>
+    <% else %>
+    <li>
+    <%= current_user.name %>
+  </li>
+  <li>
+  <%= link_to 'logout' do %>
+    Logout
+  <% end %>
+</li>
+    <% end %>
+
+
       </ul>
     </div>
   </div>
