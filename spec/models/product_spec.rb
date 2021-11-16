@@ -7,8 +7,7 @@ RSpec.describe Product, type: :model do
 
 
     before do
-      @book = Book.new(:title => "RSpec Intro", :price => 20)
-      @customer = Customer.new
+      @category = Book.new(:title => "RSpec Intro", :price => 20)
       @order = Order.new(@customer, @book)
 
       @order.submit
